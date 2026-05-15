@@ -265,7 +265,7 @@
 
     <h2>Contact</h2>
 
-    <p>Email : contact@gmail.com</p>
+    <p>Email : andriaharivelonirina@gmail.com</p>
 
     <br>
 
