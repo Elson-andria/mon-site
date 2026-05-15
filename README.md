@@ -288,6 +288,10 @@
         </p>
 
     </footer>
+    <!-- BOUTON WHATSAPP -->
+<a href="https://wa.me/261342956052" class="whatsapp-btn" target="_blank">
+    💬 WhatsApp
+</a>
 
 </body>
 
