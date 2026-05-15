@@ -160,7 +160,30 @@
 
         }
 
-    </style>
+    /* WHATSAPP BUTTON */
+
+.whatsapp-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover{
+    transform: scale(1.1);
+    background: #1ebe5d;
+}</style>
 
 </head>
 
@@ -290,7 +313,7 @@
     </footer>
     <!-- BOUTON WHATSAPP -->
 <a href="https://wa.me/261342956052" class="whatsapp-btn" target="_blank">
-    💬 WhatsApp
+    🟢
 </a>
 
 </body>
