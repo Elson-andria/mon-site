@@ -1,140 +1,254 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entreprise de Elson</title>
 
-  <style>
+    <style>
 
-    body{
-      margin:0;
-      font-family:Arial;
-      background:#111;
-      color:white;
-    }
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
-    nav{
-      background:black;
-      padding:20px;
-      text-align:center;
-      position:fixed;
-      width:100%;
-      top:0;
-    }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            color:#333;
+        }
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin:20px;
-      font-size:18px;
-    }
+        /* MENU */
 
-    nav a:hover{
-      color:orange;
-    }
+        header{
+            background:#111;
+            padding:20px;
+        }
 
-    section{
-      min-height:100vh;
-      padding:120px 40px;
-    }
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
 
-    #accueil{
-      background:#222;
-    }
+        .logo{
+            color:white;
+            font-size:28px;
+            font-weight:bold;
+        }
 
-    #services{
-      background:#333;
-    }
+        nav ul{
+            display:flex;
+            list-style:none;
+        }
 
-    #portfolio{
-      background:#444;
-    }
+        nav ul li{
+            margin-left:20px;
+        }
 
-    #contact{
-      background:#555;
-    }
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            transition:0.3s;
+        }
 
-    .card{
-      background:white;
-      color:black;
-      padding:20px;
-      margin:20px 0;
-      border-radius:10px;
-    }
+        nav ul li a:hover{
+            color:#00bfff;
+        }
 
-    input, textarea{
-      width:100%;
-      padding:10px;
-      margin-top:10px;
-    }
+        /* HERO */
 
-    button{
-      margin-top:10px;
-      padding:10px 20px;
-      background:orange;
-      border:none;
-      cursor:pointer;
-    }
+        .hero{
+            height:90vh;
+            background:linear-gradient(rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)),
+            url('https://scontent.ftnr2-2.fna.fbcdn.net/v/t39.30808-6/326344565_711652287267605_6310448203865757549_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Y0gQKHgGWoUQ7kNvwHImjLH&_nc_oc=AdplAw52hAribTCS83vfMbOMgZl37gOeH29ogaQpEyFNoO12AisOtsuaL39m9FjGgls&_nc_zt=23&_nc_ht=scontent.ftnr2-2.fna&_nc_gid=67fIhbUXDpo-r52rNFFC7Q&_nc_ss=7b2a8&oh=00_Af7OxTqNTTwx9kiwq2Ulg4SlwtlYYyPR84orO5dy79S0-A&oe=6A09E673') center/cover;
 
-  </style>
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
+
+        .hero-content h1{
+            font-size:60px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            padding:15px 30px;
+            background:#00bfff;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#009acd;
+        }
+
+        /* SERVICES */
+
+        .services{
+            padding:80px 20px;
+            text-align:center;
+        }
+
+        .services h2{
+            margin-bottom:40px;
+            font-size:40px;
+        }
+
+        .cards{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            width:300px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            margin-bottom:15px;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:40px;
+            }
+
+            nav{
+                flex-direction:column;
+            }
+
+            nav ul{
+                margin-top:15px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- MENU -->
 
-  <section id="accueil">
-    <h1>Bienvenue sur mon site</h1>
-    <p>Je suis développeur web débutant et assistant virtuel.</p>
-  </section>
+    <header>
 
-  <section id="services">
-    <h1>Mes Services</h1>
+        <nav>
 
-    <div class="card">
-      Création de site HTML/CSS
-    </div>
+            <div class="logo">Elson</div>
 
-    <div class="card">
-      Modification de site web
-    </div>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
 
-    <div class="card">
-      Assistance virtuelle
-    </div>
+        </nav>
 
-  </section>
+    </header>
 
-  <section id="portfolio">
-    <h1>Mon Portfolio</h1>
+    <!-- HERO -->
 
-    <div class="card">
-      Projet 1 : Mon premier site
-    </div>
+    <section class="hero">
 
-    <div class="card">
-      Projet 2 : Page professionnelle
-    </div>
+        <div class="hero-content">
 
-  </section>
+            <h1>Mon premier site professionnel</h1>
 
-  <section id="contact">
-    <h1>Contact</h1>
+            <p>
+                Nous développons des sites modernes,
+                rapides et responsives.
+            </p>
 
-    <form>
-      <input type="text" placeholder="Votre nom">
-      <input type="email" placeholder="Votre email">
-      <textarea placeholder="Votre message"></textarea>
-      <button>Envoyer</button>
-    </form>
+            <a href="#" class="btn">
+                Commencer
+            </a>
 
-  </section>
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+
+    <section class="services">
+
+        <h2>Nos Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Développement Web</h3>
+                <p>
+                    Création de sites vitrines et applications web modernes.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Responsive Design</h3>
+                <p>
+                    Compatible mobile, tablette et ordinateur.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>SEO</h3>
+                <p>
+                    Optimisation pour apparaître sur Google.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 DEVPRO - Tous droits réservés
+        </p>
+
+    </footer>
 
 </body>
+
 </html>
