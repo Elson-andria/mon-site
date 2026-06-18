@@ -1,342 +1,1005 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entreprise de Elson</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elson Andriamiharisoa — Community Management & Assistanat Virtuel</title>
+<meta name="description" content="J'aide les indépendants et petites entreprises à gérer leurs réseaux sociaux et leur quotidien administratif, sans embaucher à temps plein.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2312201c'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia,serif' fill='%23c9974f' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
 
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background:#f4f4f4;
-            color:#333;
-        }
-
-        /* MENU */
-
-        header{
-            background:#111;
-            padding:20px;
-        }
-
-        nav{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
-
-        .logo{
-            color:white;
-            font-size:28px;
-            font-weight:bold;
-        }
-
-        nav ul{
-            display:flex;
-            list-style:none;
-        }
-
-        nav ul li{
-            margin-left:20px;
-        }
-
-        nav ul li a{
-            color:white;
-            text-decoration:none;
-            transition:0.3s;
-        }
-
-        nav ul li a:hover{
-            color:#00bfff;
-        }
-
-        /* HERO */
-
-        .hero{
-            height:90vh;
-            background:linear-gradient(rgba(0,0,0,0.6),
-            rgba(0,0,0,0.6)),
-            url('https://scontent.ftnr2-2.fna.fbcdn.net/v/t39.30808-6/326344565_711652287267605_6310448203865757549_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Y0gQKHgGWoUQ7kNvwHImjLH&_nc_oc=AdplAw52hAribTCS83vfMbOMgZl37gOeH29ogaQpEyFNoO12AisOtsuaL39m9FjGgls&_nc_zt=23&_nc_ht=scontent.ftnr2-2.fna&_nc_gid=67fIhbUXDpo-r52rNFFC7Q&_nc_ss=7b2a8&oh=00_Af7OxTqNTTwx9kiwq2Ulg4SlwtlYYyPR84orO5dy79S0-A&oe=6A09E673') center/cover;
-
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            color:white;
-            padding:20px;
-        }
-
-        .hero-content h1{
-            font-size:60px;
-            margin-bottom:20px;
-        }
-
-        .hero-content p{
-            font-size:20px;
-            margin-bottom:30px;
-        }
-
-        .btn{
-            padding:15px 30px;
-            background:#00bfff;
-            color:white;
-            text-decoration:none;
-            border-radius:5px;
-            transition:0.3s;
-        }
-
-        .btn:hover{
-            background:#009acd;
-        }
-
-        /* SERVICES */
-
-        .services{
-            padding:80px 20px;
-            text-align:center;
-        }
-
-        .services h2{
-            margin-bottom:40px;
-            font-size:40px;
-        }
-
-        .cards{
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:20px;
-        }
-
-        .card{
-            background:white;
-            padding:30px;
-            width:300px;
-            border-radius:10px;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);
-            transition:0.3s;
-        }
-
-        .card:hover{
-            transform:translateY(-10px);
-        }
-
-        .card h3{
-            margin-bottom:15px;
-        }
-
-        /* FOOTER */
-
-        footer{
-            background:#111;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
-
-        /* RESPONSIVE */
-
-        @media(max-width:768px){
-
-            .hero-content h1{
-                font-size:40px;
-            }
-
-            nav{
-                flex-direction:column;
-            }
-
-            nav ul{
-                margin-top:15px;
-            }
-
-        }
-
-    /* WHATSAPP BUTTON */
-
-.whatsapp-btn{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
+/* ============ TOKENS ============ */
+:root{
+  --ink: #12201c;
+  --ink-soft: #1c2e26;
+  --paper: #edefe6;
+  --card: #faf9f4;
+  --brass: #c9974f;
+  --brass-light: #e3bd84;
+  --teal: #2f5d52;
+  --charcoal: #1e2722;
+  --muted: #5c6b62;
+  --muted-on-dark: #a9bdb1;
+  --line: rgba(30,39,34,0.14);
+  --line-dark: rgba(237,239,230,0.16);
+  --maxw: 1180px;
+  --serif: 'Newsreader', serif;
+  --sans: 'Inter', sans-serif;
+  --mono: 'Space Mono', monospace;
 }
 
-.whatsapp-btn:hover{
-    transform: scale(1.1);
-    background: #1ebe5d;
-}</style>
+/* ============ RESET ============ */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--charcoal);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,p{ margin:0; }
 
+:focus-visible{ outline:2px solid var(--brass); outline-offset:3px; }
+
+.wrap{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 32px;
+}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--brass);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:18px;
+}
+.eyebrow::before{
+  content:"";
+  width:22px;
+  height:1px;
+  background:var(--brass);
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:15px;
+  padding:14px 26px;
+  border-radius:3px;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-primary{
+  background:var(--brass);
+  color:var(--ink);
+}
+.btn-primary:hover{ background:var(--brass-light); transform:translateY(-1px); }
+.btn-ghost{
+  color:var(--paper);
+  border:1px solid var(--line-dark);
+}
+.btn-ghost:hover{ background:rgba(237,239,230,0.06); }
+.btn-ghost-light{
+  color:var(--charcoal);
+  border:1px solid var(--line);
+}
+.btn-ghost-light:hover{ background:rgba(30,39,34,0.04); }
+
+.link-arrow{
+  font-family:var(--mono);
+  font-size:13.5px;
+  color:var(--teal);
+  border-bottom:1px solid currentColor;
+  padding-bottom:2px;
+  transition:opacity .15s ease;
+}
+.link-arrow:hover{ opacity:0.65; }
+
+/* ============ STATUS / SIGNATURE ELEMENT ============ */
+.status-dot{
+  width:8px; height:8px; border-radius:50%;
+  background:#7fbf8f;
+  flex-shrink:0;
+  animation:pulse 2.2s infinite;
+}
+@keyframes pulse{
+  0%{ box-shadow:0 0 0 0 rgba(127,191,143,0.55); }
+  70%{ box-shadow:0 0 0 7px rgba(127,191,143,0); }
+  100%{ box-shadow:0 0 0 0 rgba(127,191,143,0); }
+}
+@media (prefers-reduced-motion: reduce){
+  .status-dot{ animation:none; }
+}
+
+/* ============ HEADER ============ */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(237,239,230,0.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 0;
+  gap:24px;
+}
+.brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1.15;
+}
+.brand-name{
+  font-family:var(--serif);
+  font-size:21px;
+  font-weight:600;
+  letter-spacing:0.01em;
+}
+.brand-role{
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:0.04em;
+}
+nav.main-nav{
+  display:flex;
+  gap:32px;
+}
+nav.main-nav a{
+  font-size:14.5px;
+  font-weight:500;
+  color:var(--charcoal);
+  position:relative;
+}
+nav.main-nav a::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:-6px;
+  width:0; height:1px;
+  background:var(--teal);
+  transition:width .2s ease;
+}
+nav.main-nav a:hover::after{ width:100%; }
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.avail-mini{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--muted);
+}
+
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  padding:6px;
+}
+.nav-toggle span{
+  width:22px; height:2px; background:var(--charcoal);
+}
+
+/* ============ HERO ============ */
+.hero{
+  background:var(--ink);
+  color:var(--paper);
+  padding:96px 0 90px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:-120px; right:-160px;
+  width:480px; height:480px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(201,151,79,0.16), transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.5fr 0.95fr;
+  gap:64px;
+  align-items:start;
+  position:relative;
+  z-index:1;
+}
+.hero .eyebrow{ color:var(--brass-light); }
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(34px, 4.6vw, 56px);
+  line-height:1.12;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  max-width:680px;
+}
+.hero h1 em{
+  font-style:italic;
+  color:var(--brass-light);
+}
+.hero p.lead{
+  margin-top:24px;
+  font-size:17.5px;
+  line-height:1.65;
+  color:var(--muted-on-dark);
+  max-width:520px;
+}
+.hero-ctas{
+  display:flex;
+  gap:16px;
+  margin-top:36px;
+  flex-wrap:wrap;
+}
+.sector-tags{
+  margin-top:48px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  font-family:var(--mono);
+  font-size:12.5px;
+  color:var(--muted-on-dark);
+  border-top:1px solid var(--line-dark);
+  padding-top:22px;
+}
+.sector-tags span:not(:last-child)::after{
+  content:"·";
+  margin-left:14px;
+  color:var(--brass);
+}
+
+.avail-card{
+  background:var(--ink-soft);
+  border:1px solid var(--line-dark);
+  border-left:3px solid var(--brass);
+  padding:26px;
+  border-radius:3px;
+}
+.avail-card .eyebrow{ margin-bottom:14px; }
+.avail-status{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:15.5px;
+  font-weight:600;
+}
+.avail-detail{
+  margin-top:14px;
+  font-size:14px;
+  color:var(--muted-on-dark);
+  line-height:1.6;
+}
+.avail-detail strong{ color:var(--paper); font-weight:600; }
+.avail-note{
+  margin-top:16px;
+  padding-top:16px;
+  border-top:1px solid var(--line-dark);
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--muted-on-dark);
+}
+
+/* ============ SECTION GENERIC ============ */
+.section{ padding:100px 0; }
+.section-head{
+  max-width:620px;
+  margin-bottom:56px;
+}
+.section-head h2{
+  font-family:var(--serif);
+  font-size:clamp(28px, 3.2vw, 38px);
+  font-weight:600;
+  line-height:1.2;
+}
+.section-note{
+  margin-top:14px;
+  font-size:14.5px;
+  color:var(--muted);
+  font-style:italic;
+}
+
+/* ============ DIFFERENTIATORS ============ */
+.diff-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:40px;
+}
+.diff-item h3{
+  font-family:var(--serif);
+  font-size:21px;
+  font-weight:600;
+  margin-bottom:12px;
+}
+.diff-item p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--muted);
+}
+.diff-item{
+  padding-top:24px;
+  border-top:2px solid var(--charcoal);
+}
+
+/* ============ SERVICES ============ */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+}
+.service-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:32px;
+  border-radius:4px;
+  transition:border-color .2s ease, transform .2s ease;
+}
+.service-card:hover{
+  border-color:var(--teal);
+  transform:translateY(-3px);
+}
+.service-card h3{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+.service-card p{
+  font-size:14.5px;
+  line-height:1.6;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+.service-price{
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--teal);
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+
+/* ============ PROCESS ============ */
+.process{
+  background:var(--ink);
+  color:var(--paper);
+}
+.process .section-head h2{ color:var(--paper); }
+.process-list{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:32px;
+}
+.process-item .num{
+  font-family:var(--mono);
+  font-size:14px;
+  color:var(--brass);
+  margin-bottom:18px;
+}
+.process-item h3{
+  font-family:var(--serif);
+  font-size:19px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+.process-item p{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--muted-on-dark);
+}
+
+/* ============ WORK ============ */
+.work-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
+}
+.work-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:4px;
+  overflow:hidden;
+}
+.work-visual{
+  height:170px;
+  position:relative;
+}
+.work-visual.v1{ background:linear-gradient(135deg, var(--ink) 0%, var(--teal) 100%); }
+.work-visual.v2{ background:repeating-linear-gradient(45deg, var(--brass) 0px, var(--brass) 2px, var(--paper) 2px, var(--paper) 14px); }
+.work-visual.v3{ background:radial-gradient(circle at 30% 30%, var(--brass-light), var(--teal) 75%); }
+.work-visual span{
+  position:absolute;
+  bottom:12px; left:14px;
+  font-family:var(--mono);
+  font-size:10.5px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.85);
+}
+.work-body{ padding:24px; }
+.work-tag{
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--teal);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+.work-body h3{
+  font-family:var(--serif);
+  font-size:19px;
+  font-weight:600;
+  margin:10px 0 10px;
+  line-height:1.3;
+}
+.work-result{
+  font-size:13.5px;
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonials{
+  background:var(--teal);
+  color:var(--paper);
+}
+.testimonials .section-head h2{ color:var(--paper); }
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
+}
+.testi-card{
+  background:rgba(237,239,230,0.06);
+  border:1px solid rgba(237,239,230,0.16);
+  padding:28px;
+  border-radius:4px;
+}
+.testi-card .quote-mark{
+  font-family:var(--serif);
+  font-size:42px;
+  color:var(--brass-light);
+  line-height:1;
+  margin-bottom:6px;
+}
+.testi-card p.quote{
+  font-size:15px;
+  line-height:1.65;
+  margin-bottom:20px;
+}
+.testi-author{ font-size:13.5px; font-weight:600; }
+.testi-role{ font-family:var(--mono); font-size:11.5px; color:var(--muted-on-dark); margin-top:3px; }
+
+/* ============ CTA BANNER ============ */
+.cta-banner{
+  background:var(--brass);
+  color:var(--ink);
+  padding:72px 0;
+  text-align:center;
+}
+.cta-banner h2{
+  font-family:var(--serif);
+  font-size:clamp(26px, 3.4vw, 36px);
+  font-weight:600;
+  margin-bottom:14px;
+}
+.cta-banner p{
+  font-size:15.5px;
+  max-width:480px;
+  margin:0 auto 30px;
+  color:rgba(18,32,28,0.8);
+}
+.cta-banner .btn-primary{
+  background:var(--ink);
+  color:var(--paper);
+}
+.cta-banner .btn-primary:hover{ background:var(--ink-soft); }
+
+/* ============ CONTACT ============ */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:64px;
+}
+.field{ margin-bottom:20px; }
+.field label{
+  display:block;
+  font-family:var(--mono);
+  font-size:11.5px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+.field input, .field select, .field textarea{
+  width:100%;
+  font-family:var(--sans);
+  font-size:15px;
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:3px;
+  background:var(--card);
+  color:var(--charcoal);
+}
+.field textarea{ resize:vertical; min-height:120px; }
+.field input:focus, .field select:focus, .field textarea:focus{
+  outline:2px solid var(--teal);
+  outline-offset:1px;
+}
+.form-confirm{
+  display:none;
+  margin-top:18px;
+  padding:14px 16px;
+  background:rgba(47,93,82,0.1);
+  border:1px solid var(--teal);
+  border-radius:3px;
+  font-size:14px;
+  color:var(--teal);
+}
+.form-confirm.show{ display:block; }
+
+.contact-side{
+  border-left:1px solid var(--line);
+  padding-left:48px;
+}
+.contact-side h3{
+  font-family:var(--serif);
+  font-size:20px;
+  margin-bottom:14px;
+}
+.contact-side p{
+  font-size:14.5px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:24px;
+}
+.contact-direct{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:14px;
+}
+.social-row{
+  display:flex;
+  gap:12px;
+  margin-top:24px;
+}
+.social-row a{
+  width:38px; height:38px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:background .15s ease, border-color .15s ease;
+}
+.social-row a:hover{ background:var(--teal); border-color:var(--teal); }
+.social-row a:hover svg{ stroke:var(--paper); }
+.social-row svg{ width:16px; height:16px; stroke:var(--charcoal); transition:stroke .15s ease; }
+
+/* ============ FOOTER ============ */
+footer{
+  background:var(--ink);
+  color:var(--muted-on-dark);
+  padding:48px 0 32px;
+}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+  padding-bottom:28px;
+  border-bottom:1px solid var(--line-dark);
+}
+.footer-nav{
+  display:flex;
+  gap:26px;
+}
+.footer-nav a{ font-size:13.5px; }
+.footer-nav a:hover{ color:var(--paper); }
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  padding-top:24px;
+  font-size:12.5px;
+  font-family:var(--mono);
+}
+
+/* ============ REVEAL ANIMATION ============ */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .diff-grid, .services-grid, .process-list, .work-grid, .testi-grid{ grid-template-columns:repeat(2,1fr); }
+  .contact-grid{ grid-template-columns:1fr; }
+  .contact-side{ border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:40px; }
+}
+@media (max-width:680px){
+  .wrap{ padding:0 22px; }
+  nav.main-nav, .header-right .btn{ display:none; }
+  .nav-toggle{ display:flex; }
+  .diff-grid, .services-grid, .process-list, .work-grid, .testi-grid{ grid-template-columns:1fr; }
+  .section{ padding:72px 0; }
+  .hero{ padding:64px 0; }
+  .hero-ctas{ flex-direction:column; align-items:flex-start; }
+  .footer-inner, .footer-bottom{ flex-direction:column; align-items:flex-start; }
+}
+
+</style>
 </head>
-
 <body>
 
-    <!-- MENU -->
+<a href="#main" style="position:absolute;left:-9999px;">Aller au contenu</a>
 
-    <header>
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <!-- ✏️ PERSONNALISATION : votre nom -->
+      <span class="brand-name">Elson ANDRIAMIHARISOA</span>
+      <span class="brand-role">Community Management & Assistanat Virtuel</span>
+    </div>
+    <nav class="main-nav">
+      <a href="#services">Services</a>
+      <a href="#methode">Méthode</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-right">
+      <div class="avail-mini"><span class="status-dot"></span> Disponible</div>
+      <a href="#contact" class="btn btn-primary">Travaillons ensemble</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-        <nav>
+<main id="main">
 
-            <div class="logo">Elson</div>
-
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-        </nav>
-
-    </header>
-
-    <!-- HERO -->
-
-    <section class="hero" id="accueil">
-
-        <div class="hero-content">
-
-            <h1>Création de sites web professionnels</h1>
-
-            <p>
-                J'aide les entreprises, commerçants et indépendants
-                à développer leur présence en ligne grâce à des sites
-                web modernes et rapides.
-            </p>
-
-            <a href="#contact" class="btn">
-                   Demander un devis
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- SERVICES -->
-    </section>
-
-<!-- A PROPOS -->
-
-<section class="services">
-
-    <h2>À propos de moi</h2>
-
-    <p>
-        Je suis Elson, développeur web freelance.
-        Je crée des sites vitrines modernes,
-        responsives et optimisés pour les moteurs
-        de recherche.
-    </p>
-
-</section>
-
-<!-- SERVICES -->
-
-<section class="services" id="services">
-
-    <section class="services" id="services">
-
-        <h2>Nos Services</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Développement Web</h3>
-                <p>
-                    Création de sites vitrines et applications web modernes.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Responsive Design</h3>
-                <p>
-                    Compatible mobile, tablette et ordinateur.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>SEO</h3>
-                <p>
-                    Optimisation pour apparaître sur Google.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER --><section id="portfolio" class="services">
-
-    <h2>Mon Portfolio</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Projet 1</h3>
-            <p>Mon premier site web professionnel.</p>
-        </div>
-
-        <div class="card">
-            <h3>Projet 2</h3>
-            <p>Design moderne et responsive.</p>
-        </div>
-
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Freelance · Community Management & Assistanat Virtuel</div>
+      <h1>Je m'occupe de vos réseaux sociaux et de votre <em>quotidien administratif</em>, pour que vous puissiez vous concentrer sur votre activité.</h1>
+      <p class="lead">J'accompagne les indépendants, coachs et petites entreprises qui n'ont plus le temps de publier régulièrement, répondre à leurs messages ou gérer les tâches du quotidien — sans pour autant embaucher à temps plein.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Réserver un appel découverte</a>
+        <a href="#realisations" class="btn btn-ghost">Voir mes réalisations ↓</a>
+      </div>
+      <div class="sector-tags">
+        <span>Coachs & formateurs</span><span>Commerces locaux</span><span>Indépendants</span><span>Petites entreprises</span>
+      </div>
     </div>
 
+    <div class="avail-card">
+      <div class="eyebrow">Disponibilité</div>
+      <div class="avail-status"><span class="status-dot"></span> Disponible pour un nouveau projet</div>
+      <div class="avail-detail">Prochaine ouverture de planning : <strong>3 juillet 2026</strong></div>
+      <div class="avail-note">Réponse garantie sous 24h, week-ends compris</div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACT -->
-
-<section id="contact" class="services">
-
-    <h2>Contact</h2>
-
-    <p>Email : andriaharivelonirina@gmail.com</p>
-
-    <br>
-
-    <input type="text" placeholder="Votre nom">
-
-    <br><br>
-
-    <input type="email" placeholder="Votre email">
-
-    <br><br>
-
-    <textarea placeholder="Votre message"></textarea>
-
+<!-- ============ DIFFÉRENCIATEURS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Pourquoi moi</div>
+      <h2>Pourquoi déléguer ces tâches</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-item reveal">
+        <h3>Une vraie présence, pas juste des posts</h3>
+        <p>Je ne me contente pas de publier : je réponds à vos messages, j'engage votre communauté, et je vous remonte ce qui fonctionne vraiment.</p>
+      </div>
+      <div class="diff-item reveal">
+        <h3>Confidentialité totale</h3>
+        <p>Accès à vos comptes, vos emails, vos outils : chaque information est traitée avec la même discrétion qu'en interne.</p>
+      </div>
+      <div class="diff-item reveal">
+        <h3>Une charge mentale en moins</h3>
+        <p>Vous n'avez plus à penser au prochain post ou à la relance client : je m'en occupe, vous validez et passez à autre chose.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-    <footer>
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Services</div>
+      <h2>Ce que je peux prendre en charge pour vous</h2>
+    </div>
+    <!-- ✏️ PERSONNALISATION : adaptez ces 4 offres à votre activité -->
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <h3>Gestion de réseaux sociaux</h3>
+        <p>Création de contenus, publication régulière, modération des commentaires et messages, calendrier édito mensuel.</p>
+        <div class="service-price">À partir de 350 €/mois</div>
+      </div>
+      <div class="service-card reveal">
+        <h3>Community management complet</h3>
+        <p>Animation de votre communauté, réponses sous 24h, veille concurrentielle, reporting mensuel des résultats.</p>
+        <div class="service-price">À partir de 550 €/mois</div>
+      </div>
+      <div class="service-card reveal">
+        <h3>Assistanat virtuel</h3>
+        <p>Gestion de boîte mail, prise de rendez-vous, organisation administrative, support client de premier niveau.</p>
+        <div class="service-price">À partir de 25 €/heure</div>
+      </div>
+      <div class="service-card reveal">
+        <h3>Pack sur-mesure</h3>
+        <p>Une combinaison de réseaux sociaux et de tâches administratives, adaptée à votre activité et à votre rythme.</p>
+        <div class="service-price">Sur devis</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <p>
-            © 2026 DEVPRO - Tous droits réservés
-        </p>
+<!-- ============ PROCESS ============ -->
+<section class="section process" id="methode">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Méthode</div>
+      <h2>Comment on travaille ensemble</h2>
+    </div>
+    <div class="process-list">
+      <div class="process-item reveal">
+        <div class="num">01</div>
+        <h3>Appel découverte</h3>
+        <p>30 minutes pour comprendre votre activité, vos réseaux actuels et vos besoins au quotidien. Gratuit, sans engagement.</p>
+      </div>
+      <div class="process-item reveal">
+        <div class="num">02</div>
+        <h3>Choix du forfait</h3>
+        <p>On définit ensemble la formule adaptée : réseaux sociaux, assistanat virtuel, ou les deux combinés.</p>
+      </div>
+      <div class="process-item reveal">
+        <div class="num">03</div>
+        <h3>Mise en place</h3>
+        <p>Accès sécurisés à vos outils, calendrier de publication, premières tâches prises en main.</p>
+      </div>
+      <div class="process-item reveal">
+        <div class="num">04</div>
+        <h3>Suivi mensuel</h3>
+        <p>Un point régulier et un reporting clair : ce qui a été fait, ce qui fonctionne, ce qu'on ajuste.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    </footer>
-    <!-- BOUTON WHATSAPP -->
-<a href="https://wa.me/261342956052" class="whatsapp-btn" target="_blank">
-    🟢
-</a>
+<!-- ============ RÉALISATIONS ============ -->
+<section class="section" id="realisations" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Réalisations</div>
+      <h2>Quelques missions récentes</h2>
+      <p class="section-note">Exemples de mise en page — remplacez par vos propres missions, captures et résultats.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <div class="work-visual v1"><span>Aperçu de la mission</span></div>
+        <div class="work-body">
+          <div class="work-tag">Coaching & développement personnel</div>
+          <h3>Gestion Instagram et newsletter pour une coach indépendante</h3>
+          <div class="work-result">Communauté Instagram : +1 200 abonnés en 4 mois</div>
+          <a href="#" class="link-arrow">Voir la mission →</a>
+        </div>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-visual v2"><span>Aperçu de la mission</span></div>
+        <div class="work-body">
+          <div class="work-tag">Commerce local</div>
+          <h3>Community management pour une boutique de prêt-à-porter</h3>
+          <div class="work-result">Taux d'engagement : ×3 en 6 mois</div>
+          <a href="#" class="link-arrow">Voir la mission →</a>
+        </div>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-visual v3"><span>Aperçu de la mission</span></div>
+        <div class="work-body">
+          <div class="work-tag">Formation en ligne</div>
+          <h3>Assistanat virtuel pour un formateur (mails, agenda, support client)</h3>
+          <div class="work-result">Temps administratif libéré : 12h par semaine</div>
+          <a href="#" class="link-arrow">Voir la mission →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVIS ============ -->
+<section class="section testimonials" id="avis">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Avis</div>
+      <h2>Ce qu'en disent mes clients</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="quote">Depuis qu'Elson gère mes réseaux, je n'ai plus à y penser. Les posts partent à l'heure, les messages sont traités, et mes ventes ont suivi.</p>
+        <div class="testi-author">Sophie Lambert</div>
+        <div class="testi-role">Coach en développement personnel</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="quote">J'ai récupéré une dizaine d'heures par semaine sur la gestion de mes mails et de mon agenda. Un vrai changement pour mon quotidien.</p>
+        <div class="testi-author">Karim Benali</div>
+        <div class="testi-role">Formateur indépendant</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="quote-mark">"</div>
+        <p class="quote">Le reporting mensuel est clair, je sais exactement ce qui a été fait et pourquoi ça fonctionne.</p>
+        <div class="testi-author">Hélène Tran</div>
+        <div class="testi-role">Gérante, boutique de prêt-à-porter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Envie de déléguer votre communication ou votre administratif ?</h2>
+    <p>Parlons-en avant de vous engager sur quoi que ce soit. L'appel découverte est gratuit et ne vous engage à rien.</p>
+    <a href="#contact" class="btn btn-primary">Réserver un appel</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,34px);font-weight:600;margin-bottom:30px;">On démarre ?</h2>
+      <form id="contactForm">
+        <div class="field">
+          <label for="name">Nom</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="field">
+          <label for="budget">Budget envisagé</label>
+          <select id="budget">
+            <option>Moins de 300 €/mois</option>
+            <option>300 – 600 €/mois</option>
+            <option>600 – 1 000 €/mois</option>
+            <option>Besoin ponctuel / sur devis</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Parlez-moi de votre projet</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+        <div class="form-confirm" id="formConfirm">Merci ! Votre message est bien noté — je vous recontacte sous 24h.</div>
+      </form>
+    </div>
+
+    <div class="contact-side reveal">
+      <h3>Préférez l'email ?</h3>
+      <p>Je réponds en moins de 24h, week-ends compris. Pas de standard, pas d'attente.</p>
+      <!-- ✏️ PERSONNALISATION : vos coordonnées -->
+      <div class="contact-direct">andriaharivelonirina@gmail.com</div>
+      <p>Vous pouvez aussi me retrouver ici :</p>
+      <div class="social-row">
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h16v16H4z" opacity="0"/><path d="M6 9h2v9H6zM7 7a1 1 0 100-2 1 1 0 000 2zM11 9h2v1.5c.6-1 1.6-1.5 2.7-1.5 2 0 2.3 1.4 2.3 3.2V18h-2v-4.6c0-1.1 0-2.4-1.5-2.4s-1.7 1.1-1.7 2.4V18h-2z"/></svg>
+        </a>
+        <a href="#" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="brand-name" style="font-family:var(--serif);font-size:19px;color:var(--paper);">Elson ANDRIAMIHARISOA</div>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#methode">Méthode</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Elson ANDRIAMIHARISOA — Tous droits réservés.</span>
+      <span style="display:flex;align-items:center;gap:8px;"><span class="status-dot"></span> Disponible pour un nouveau projet</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav toggle
+const toggle = document.getElementById('navToggle');
+const nav = document.querySelector('.main-nav');
+const headerRightBtn = document.querySelector('.header-right .btn');
+toggle.addEventListener('click', () => {
+  const open = nav.style.display === 'flex';
+  nav.style.display = open ? 'none' : 'flex';
+  nav.style.flexDirection = 'column';
+  nav.style.position = 'absolute';
+  nav.style.top = '100%';
+  nav.style.left = '0';
+  nav.style.right = '0';
+  nav.style.background = 'var(--paper)';
+  nav.style.padding = '20px 22px';
+  nav.style.borderBottom = '1px solid var(--line)';
+  nav.style.gap = '16px';
+  headerRightBtn.style.display = open ? 'none' : 'inline-flex';
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+
+// Contact form (no backend — front-end confirmation only)
+const form = document.getElementById('contactForm');
+const confirm = document.getElementById('formConfirm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  confirm.classList.add('show');
+  form.reset();
+});
+</script>
 
 </body>
-
 </html>
